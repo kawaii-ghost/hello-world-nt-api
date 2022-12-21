@@ -4,9 +4,11 @@
 
 ![gambar](https://user-images.githubusercontent.com/86765295/208801010-ce0c49d5-9c6c-4c4d-b470-9eb6a3be9b0d.png)
 
-I made this repo because I found many people asking _How to Hello World x64 Assembly using Windows System Call_ across the internet and here we are :).
+I made this repo because I found many people asking _How to Hello World x64 Assembly using Windows System Call_ across the internet and here we are :). This code is [NASM](https://nasm.us/) specific.
 
 This program is still depend on `ntdll.dll` because NT system call number changed across version _~unlike Linux~_.
+
+> You _should not use this program for production or deployment_ because undocumented stuff may behave differently across windows version.
 
 ## Some Notes
 ### Calling convention
@@ -14,7 +16,7 @@ NT System Call Calling Convention is same like the userspace.
 
 Except the first argument is placed on `R10` (`syscall` destroy `RCX` as return address `RIP` and `R11` as rflags as documented on [x64 ABI conventions](https://learn.microsoft.com/en-us/cpp/build/x64-software-conventions?view=msvc-170#register-volatility-and-preservation). 
 
-Another source is analyzing `ntdll.dll` and you will look `mov r10, rcx`.
+Analyze `ntdll.dll` and you will look `mov r10, rcx`.
 
 | System Call Number | Arg0 | Arg1 | Arg2 | Arg3 |
 | ------------------ | ---- | ---- | ---- | ---- |
@@ -35,6 +37,7 @@ But the **Peb** structure is work. Seems like different NT version has different
 - [PE Format](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format)
 - [x64 calling convention](https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170)
 - [PEB Structure](https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb)
+- [IO_STATUS_BLOCK structure (wdm.h)](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 - [NtWriteFile function (ntifs.h)](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)
 - [ZwCurrentProcess](https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/zwcurrentprocess)
 - [GetCurrentProcess function (processthreadsapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess)
@@ -46,6 +49,7 @@ But the **Peb** structure is work. Seems like different NT version has different
 
 Special Thanks to [@ReactOS](https://github.com/reactos/) team for the undocumented parts :D
 
+- [inline_syscall](https://github.com/JustasMasiulis/inline_syscall)
 - [GetStdHandle](https://doxygen.reactos.org/df/d28/dll_2win32_2kernel32_2client_2console_2console_8c_source.html#l01170)
 - [NtCurrentPeb](https://www.geoffchappell.com/studies/windows/km/ntoskrnl/inc/api/pebteb/peb/index.htm)
 - [_RTL_USER_PROCESS_PARAMETERS](https://doxygen.reactos.org/d5/df7/ndk_2rtltypes_8h_source.html#l01529)
