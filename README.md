@@ -4,11 +4,11 @@
 
 ![gambar](https://user-images.githubusercontent.com/86765295/208801010-ce0c49d5-9c6c-4c4d-b470-9eb6a3be9b0d.png)
 
-I made this repo because I found many people asking _How to Hello World x64 Assembly using Windows System Call_ across the internet. And here we are :).
+I made this repo because I found many people asking _How to Hello World x64 Assembly using Windows System Call_ across the internet and here we are :).
 
 This program is still depend on `ntdll.dll` because NT system call number changed across version _~unlike Linux~_.
 
-## Some Note
+## Some Notes
 ### Calling convention
 NT System Call Calling Convention is same like the userspace.
 
@@ -33,6 +33,7 @@ But the **Peb** structure is work. Seems like different NT version has different
 ## Public Documentation
 
 - [PE Format](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format)
+- [x64 calling convention](https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170)
 - [PEB Structure](https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb)
 - [NtWriteFile function (ntifs.h)](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)
 - [ZwCurrentProcess](https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/zwcurrentprocess)
