@@ -48,7 +48,7 @@ But the **Peb** structure is work. Seems like different NT version has different
 
 ![](https://i.imgflip.com/751y23.jpg)
 
-Special Thanks to [@ReactOS](https://github.com/reactos/) team for the undocumented parts :D
+Special Thanks to [@ReactOS](https://github.com/reactos/) team for most of the undocumented parts :D
 - [Windows Native API - Roger Orr [ACCU 2019]](https://accu.org/conf-docs/PDFs_2019/roger_orr_-_windows_native_api.pdf)
 - [inline_syscall](https://github.com/JustasMasiulis/inline_syscall)
 - [GetStdHandle](https://doxygen.reactos.org/df/d28/dll_2win32_2kernel32_2client_2console_2console_8c_source.html#l01170)
