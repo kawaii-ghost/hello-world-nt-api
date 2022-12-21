@@ -15,7 +15,8 @@ section .bss
 section .text
 	global WinMain
 WinMain:
-        sub rsp, 88 ; Shadow stack + Stack arguments (mutiple of 16 bytes) + Return Address Allignment
+        sub rsp, 88	; Shadow stack (32 bytes) + Stack arguments (mutiple of 16 bytes) 
+			; + Return address allignment (8 bytes)
         
 	mov rcx, NtCurrentPeb()
 	mov rcx, ProcessParameter[rcx]
