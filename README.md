@@ -1,6 +1,6 @@
 # Hello World NT API
 
-> This only work at NT version number 10.0 (Windows 10, Windows Server (2016-2019-2022), and Windows 11) only.
+> This program is working under NT version number 10.0 (Windows 10, Windows Server (2016-2019-2022), and Windows 11) only. Different NT version number may behave differently.
 
 ![gambar](https://user-images.githubusercontent.com/86765295/208801010-ce0c49d5-9c6c-4c4d-b470-9eb6a3be9b0d.png)
 
@@ -8,9 +8,6 @@ I made this repo because I found many people asking _How to Hello World Assembly
 
 This program is still depend on `ntdll.dll` because NT system call number changed across version _~unlike Linux~_.
 
-
-
-## Notes
 ### Calling convention
 NT System Call Calling Convention is same like the userspace.
 
@@ -31,3 +28,8 @@ This is slightly bother me, but I tried this on NT version number 5.2 (Windows S
 But the **Peb** structure is work. Seems like different NT version has different System call calling convention.
 
 -------
+
+Special Thanks to ReactOS Team for the undocumented parts :D
+
+[GetStdHandle(nStdHandle)](https://doxygen.reactos.org/df/d28/dll_2win32_2kernel32_2client_2console_2console_8c_source.html#l01170)
+
