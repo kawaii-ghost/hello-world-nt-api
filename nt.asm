@@ -13,11 +13,9 @@ section .bss
 	IoStatusBlock resb 16
         
 section .text
-	global NtProcessStartup
-NtProcessStartup:
-        sub rsp, 88	; Shadow stack (32 bytes) + Stack arguments (mutiple of 16 bytes) 
-			; + Return address allignment (8 bytes)
-        
+	global main
+main:
+        sub rsp, 88	; Shadow stack (32 bytes) + Stack arguments (mutiple of 16 bytes) + Return address allignment (8 bytes)
 	mov rcx, NtCurrentPeb()
 	mov rcx, ProcessParameter[rcx]
 	mov rcx, StandardOutput[rcx]
