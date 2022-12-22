@@ -8,10 +8,8 @@ extern NtTerminateProcess
 
 section .rdata
 	msg db `Hello, world!\n\0`
-        
 section .bss
 	IoStatusBlock resb 16
-        
 section .text
 	global main
 main:
