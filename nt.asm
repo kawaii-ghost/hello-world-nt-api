@@ -13,8 +13,8 @@ section .bss
 	IoStatusBlock resb 16
         
 section .text
-	global WinMain
-WinMain:
+	global NtProcessStartup
+NtProcessStartup:
         sub rsp, 88	; Shadow stack (32 bytes) + Stack arguments (mutiple of 16 bytes) 
 			; + Return address allignment (8 bytes)
         
