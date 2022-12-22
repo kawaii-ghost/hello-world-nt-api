@@ -35,6 +35,7 @@ But the **Peb** structure is work. Seems like different NT version has different
 ## Public Documentation
 
 - [PE Format](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format)
+- [Inside Native Applications](https://learn.microsoft.com/en-us/sysinternals/resources/inside-native-applications)
 - [Windows Data Types](https://learn.microsoft.com/en-us/windows/win32/winprog/windows-data-types)
 - [x64 calling convention](https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-170)
 - [PEB Structure](https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb)
