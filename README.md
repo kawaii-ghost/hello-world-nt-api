@@ -1,9 +1,5 @@
 # Hello World NT API
 
-> This program is tested work under NT version number 10.0 (Windows 10, Windows Server (2016-2019-2022), and Windows 11) only.
-
-> Update 2022/12/26 : Worked under NT version number 6.3 (Windows 8.1), Does it means its started from 6.0 and above ?
-
 ![gambar](https://user-images.githubusercontent.com/86765295/208801010-ce0c49d5-9c6c-4c4d-b470-9eb6a3be9b0d.png)
 
 I made this repo because I found many people asking _How to Hello World x64 Assembly using Windows System Call_ across the internet and here we are :). This code is [NASM](https://nasm.us/) specific.
@@ -28,9 +24,13 @@ The stack argument is placed at `[rsp + 32 + 8]` due to shadow store and return 
 
 ### Different NT version behaviour
 
-This is slightly bother me, but I tried this on NT version number 5.2 (Windows Server 2003) it doesn't work.
+This is slightly bother me, but I tried this on NT version number 5.2 (Windows Server 2003) and 6.1 (Windows 7) it doesn't work.
 
-But the **Peb** structure is work.
+Seems like the program works started from NT version number 6.3 (Windows 8.1), might be work on 6.2 (Windows 8) but haven't test it.
+
+Andy Tanenbaum also classify Windows 8/8.1 as modern Windows.
+
+Started from 
 -------
 
 ## Public Documentation
