@@ -1,6 +1,8 @@
 # Hello World NT API
 
-> This program is may work under NT version number 10.0 (Windows 10, Windows Server (2016-2019-2022), and Windows 11) only.
+> This program is tested work under NT version number 10.0 (Windows 10, Windows Server (2016-2019-2022), and Windows 11) only.
+
+> Update 2022/12/26 : Worked under NT version number 6.3 (Windows 8.1), Does it means its started from 6.0 and above ?
 
 ![gambar](https://user-images.githubusercontent.com/86765295/208801010-ce0c49d5-9c6c-4c4d-b470-9eb6a3be9b0d.png)
 
@@ -28,8 +30,7 @@ The stack argument is placed at `[rsp + 32 + 8]` due to shadow store and return 
 
 This is slightly bother me, but I tried this on NT version number 5.2 (Windows Server 2003) it doesn't work.
 
-But the **Peb** structure is work. Seems like different NT version has different System call calling convention.
-
+But the **Peb** structure is work.
 -------
 
 ## Public Documentation
