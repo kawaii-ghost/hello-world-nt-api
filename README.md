@@ -26,11 +26,10 @@ The stack argument is placed at `[rsp + 32 + 8]` due to shadow store and return 
 
 This is slightly bother me, but I tried this on NT version number 5.2 (Windows Server 2003) and 6.1 (Windows 7) it doesn't work.
 
-Seems like the program works started from NT version number 6.3 (Windows 8.1), might be work on 6.2 (Windows 8) but haven't test it.
+Seems like the program started working from NT version number 6.3 (Windows 8.1), might be work on 6.2 (Windows 8) but haven't test it.
 
 Andy Tanenbaum also classify Windows 8/8.1 as modern Windows.
 
-Started from 
 -------
 
 ## Public Documentation
@@ -42,7 +41,6 @@ Started from
 - [PEB Structure](https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb)
 - [IO_STATUS_BLOCK structure (wdm.h)](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 - [NtWriteFile function (ntifs.h)](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)
-- [ZwCurrentProcess](https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/zwcurrentprocess)
 - [GetCurrentProcess function (processthreadsapi.h)](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess)
 - [ZwTerminateProcess function (ntddk.h)](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/nf-ntddk-zwterminateprocess)
 
