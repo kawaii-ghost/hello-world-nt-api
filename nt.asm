@@ -1,5 +1,6 @@
 extern NtWriteFile
-extern NtTerminateProcess
+extern RtlExitUserProcess
+; extern NtTerminateProcess
 
 %define NtCurrentPeb() gs:[0x60]
 %define ProcessParameter 32
@@ -13,7 +14,7 @@ section .bss
 section .text
 	global main
 main:
-        sub rsp, 72			; Clang use stack allignment from return address for passing argument
+        sub rsp, 72
 	mov rcx, NtCurrentPeb()
 	mov rcx, ProcessParameter[rcx]
 	mov rcx, StandardOutput[rcx]
@@ -27,7 +28,11 @@ main:
 	mov qword 64[rsp], 0
 	call NtWriteFile
 
-	mov rcx, NtCurrentProcess()
-	xor edx, edx
-	call NtTerminateProcess
+	; There are two ways to TerminateProcess either using NtTerminateProcess directly
+	; or via RtlExitUserProcess but the second one is much safer
+	; mov rcx, NtCurrentProcess()
+	; xor edx, edx
+	; call NtTerminateProcess
+	xor ecx, ecx
+	call RtlExitUserProcess
 	int3
