@@ -22,13 +22,10 @@ Analyze `ntdll.dll` and you will look `mov r10, rcx`.
 
 The stack argument is placed at `[rsp + 32 + 8]` due to shadow store and return address from `call NtXxx` sub-routine.
 
-### Different NT version behaviour
+### Evolution of Console behaviour
+At first i thought `WriteConsole*` API implementation is always call `NtWriteFile`. I was wrong
 
-This is slightly bother me, but I tried this on NT version number 5.2 (Windows Server 2003) and 6.1 (Windows 7) it doesn't work.
-
-Seems like the program started working from NT version number 6.3 (Windows 8.1), might be work on 6.2 (Windows 8) but haven't test it.
-
-Andy Tanenbaum also classify Windows 8/8.1 as modern Windows.
+Nah, you can read it here https://www.mandiant.com/resources/blog/monitoring-windows-console-activity-part-one.
 
 -------
 
