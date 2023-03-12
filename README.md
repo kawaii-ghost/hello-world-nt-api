@@ -23,7 +23,11 @@ Analyze `ntdll.dll` and you will look `mov r10, rcx`.
 The stack argument is placed at `[rsp + 32 + 8]` due to shadow store and return address from `call NtXxx` sub-routine.
 
 ### Evolution of Console behaviour
-At first i thought `WriteConsole*` API implementation is always call `NtWriteFile`. I was wrong
+At first i thought `WriteConsole*` API implementation is calling `NtWriteFile`. I was wrong.
+
+`WriteConsole*` API call `NtDeviceIoControlFile`.
+
+It's more complex than `WriteFile(STD_OUTPUT_HANDLE, ...)` that just calling `NtWriteFile`.
 
 Nah, you can read it here https://www.mandiant.com/resources/blog/monitoring-windows-console-activity-part-one.
 
